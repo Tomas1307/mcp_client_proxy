@@ -2,9 +2,7 @@
 
 This project implements a FastAPI-based proxy service for MCP (Multi-tool Communication Protocol) servers. It provides a unified interface to interact with various MCP servers through standardized adapters, supporting both stdio (Docker container-based) and HTTP interfaces.
 
-VIDEO LINK Implementation -> https://www.loom.com/share/cab5866f0c6e48a9bc5b3555a7d00566?sid=5980e45c-dbf4-44ed-94c4-49b01651e962
-
-VIDEO LINK Why Cadre AI? -> https://www.loom.com/share/6ac6013e82fa4d3899e8dd168659f42f?sid=17dc6b49-9d38-4bd2-9bdf-df331f57b3f0
+VIDEO LINK Implementation, Report and Why working with you -> https://drive.google.com/file/d/1l-LbWlmIwU9nUJxMwXDcvtrhGXuPyDjb/view?usp=sharing
 ## Table of Contents
 
 - [Installation](#installation)
