@@ -285,6 +285,8 @@ I would like to make the system even more generalized because currently, it only
 - Performance optimizations for high-throughput scenarios
 - A web-based dashboard for viewing adapter status and tool availability
 
+Another feature I would have loved to explore with more time is integrating the system with a large language model (LLM) to allow natural language queries directly, removing the need for users to manually construct JSON payloads or interact with the API through technical interfaces. This would open the door for a more intuitive user experience, enabling users to describe their goals in plain language and letting the system infer the appropriate tool and parameters, thus making the MCP client more accessible and powerful.
+
 ### Which parts am I most proud of? And why?
 
 I'm really proud of the core/ module and the StdIOAdapter implementation. It wasn't easy trying to wrap Docker container communication into an HTTP protocol. All the Docker files are being executed in stdio, and managing to wrap that as an HTTP service was essential to meet the requirements of the technical test. Other libraries were using different approaches, so creating a consistent interface was challenging but rewarding.
