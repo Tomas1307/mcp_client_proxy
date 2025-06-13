@@ -2,6 +2,7 @@
 import os
 from .base import ConfigLoader, logger
 
+
 class GitHubLoader(ConfigLoader):
     def load(self):
         """
@@ -17,12 +18,13 @@ class GitHubLoader(ConfigLoader):
             as id, type, image, and Docker arguments if the access token is found,
             otherwise None.
         """
+        from .config import API_IDS
         token = os.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
         if not token:
             return None
         logger.info("Añadiendo MCP-Server de GitHub")
         return {
-            "id": "github",
+            "id": API_IDS["github"],
             "type": "stdio",
             "image": "ghcr.io/github/github-mcp-server",
             "docker_args": [

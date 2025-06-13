@@ -1,6 +1,7 @@
 import os
 from .base import ConfigLoader, logger
 
+
 class GoogleMapsLoader(ConfigLoader):
     def load(self):
         """
@@ -15,12 +16,13 @@ class GoogleMapsLoader(ConfigLoader):
             A dictionary containing the configuration for the Google Maps MCP-Server if
             the API key is found; otherwise, None.
         """
+        from .config import API_IDS
         key = os.getenv("GOOGLE_MAPS_API_KEY")
         if not key:
             return None
         logger.info("Añadiendo MCP-Server de Google Maps")
         return {
-            "id": "google-maps",
+            "id": API_IDS["google_maps"],
             "type": "stdio",
             "image": "mcp/google-maps",
             "docker_args": ["-e", f"GOOGLE_MAPS_API_KEY={key}"],

@@ -2,6 +2,7 @@
 import os
 from .base import ConfigLoader, logger
 
+
 class BraveSearchLoader(ConfigLoader):
     def load(self):
         """
@@ -19,13 +20,14 @@ class BraveSearchLoader(ConfigLoader):
             Docker arguments for the Brave Search MCP-Server if the API key is found.
             Returns None if the API key is not found.
         """
+        from .config import API_IDS
         key = os.getenv("BRAVE_API_KEY")
         if not key:
             return None
 
         logger.info("Añadiendo MCP‑Server de Brave Search")
         return {
-            "id": "brave-search",
+            "id": API_IDS["brave_search"],
             "type": "stdio",
             "image": "mcp/brave-search",
             "docker_args": [
