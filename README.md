@@ -2,7 +2,6 @@
 
 This project implements a FastAPI-based proxy service for MCP (Multi-tool Communication Protocol) servers. It provides a unified interface to interact with various MCP servers through standardized adapters, supporting both stdio (Docker container-based) and HTTP interfaces.
 
-VIDEO LINK Implementation, Report and Why working with you -> https://drive.google.com/file/d/1l-LbWlmIwU9nUJxMwXDcvtrhGXuPyDjb/view?usp=sharing
 ## Table of Contents
 
 - [Installation](#installation)
@@ -273,28 +272,3 @@ The StdIOAdapter was designed to wrap Docker container-based MCP servers in an H
 
 The architecture was designed with scalability in mind, allowing for easy addition of new MCP servers by simply adding new loaders in the core directory and providing the appropriate API keys.
 
-## Project Report
-
-### What improvements would I add with more time?
-
-I would like to make the system even more generalized because currently, it only works with Docker containers. This limits its flexibility for MCP servers that might not have a container available. Additional improvements could include:
-
-- Better error handling and recovery mechanisms
-- Comprehensive logging and monitoring
-- User authentication and access control
-- Performance optimizations for high-throughput scenarios
-- A web-based dashboard for viewing adapter status and tool availability
-
-Another feature I would have loved to explore with more time is integrating the system with a large language model (LLM) to allow natural language queries directly, removing the need for users to manually construct JSON payloads or interact with the API through technical interfaces. This would open the door for a more intuitive user experience, enabling users to describe their goals in plain language and letting the system infer the appropriate tool and parameters, thus making the MCP client more accessible and powerful.
-
-### Which parts am I most proud of? And why?
-
-I'm really proud of the core/ module and the StdIOAdapter implementation. It wasn't easy trying to wrap Docker container communication into an HTTP protocol. All the Docker files are being executed in stdio, and managing to wrap that as an HTTP service was essential to meet the requirements of the technical test. Other libraries were using different approaches, so creating a consistent interface was challenging but rewarding.
-
-### Which parts did I spend the most time on? What did I find most difficult?
-
-I spent most of my time on the StdIOAdapter, ensuring it could reliably communicate with Docker containers and handle the various edge cases that arose. Making the system as scalable as possible was also time-consuming, ensuring that adding new MCP servers only required writing the API key in the environment and adding a loader file in the core directory.
-
-### How did I find the test overall?
-
-The test was challenging as it required creating an MCP client, which is different from the REST architecture I'm more accustomed to. However, it was a good learning experience. I think the test was well-designed, although as someone interested in the role, I might have enjoyed something more closely related to fine-tuning an LLM or using a model from Hugging Face.
